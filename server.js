@@ -2,6 +2,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const cors = require('cors')
 const authRoutes = require('./routes/authRoutes');
 
 // Load environment variables
@@ -9,7 +10,7 @@ dotenv.config();
 
 // Initialize express app
 const app = express();
-
+app.use(cors())
 // Connect to MongoDB
 connectDB();
 
